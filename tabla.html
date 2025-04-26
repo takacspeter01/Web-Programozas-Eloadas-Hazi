@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Táblázat – CRUD</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="tabla.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Web-programozás-1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="tabla.html" class="active">Táblázat</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a href="chart.html">ChartJS</a></li>
+      <li><a href="ajax.html">AJAX</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="react.html">React</a></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <p>CRUD működés JavaScript-tel!</p>
+  </aside>
+
+  <div id="content">
+    <h2>Táblázat – CRUD, Rendezés, Keresés</h2>
+
+    <form id="recordForm">
+      <input type="text" id="name" placeholder="Név" required maxlength="30">
+      <input type="number" id="age" placeholder="Kor" required min="0">
+      <input type="text" id="city" placeholder="Város" required maxlength="30">
+      <input type="text" id="job" placeholder="Szakma" required maxlength="30">
+      <button type="submit">Hozzáadás</button>
+    </form>
+
+    <input type="text" id="search" placeholder="Keresés...">
+
+    <table id="dataTable" border="1">
+      <thead>
+        <tr>
+          <th data-column="name">Név</th>
+          <th data-column="age">Kor</th>
+          <th data-column="city">Város</th>
+          <th data-column="job">Szakma</th>
+          <th>Művelet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ide jönnek a rekordok JS-ből -->
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>Takács Péter – OE09T3 | Halasi Zoltán – JJNRKU</p>
+  </footer>
+</body>
+</html>

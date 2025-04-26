@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 API példák</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="html5.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Web-programozás-1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="tabla.html">Táblázat</a></li>
+      <li><a href="html5.html" class="active">HTML5</a></li>
+      <li><a href="chart.html">ChartJS</a></li>
+      <li><a href="ajax.html">AJAX</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="react.html">React</a></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <p>HTML5 API-k működés közben!</p>
+  </aside>
+
+  <div id="content">
+    <h2>HTML5 API példák</h2>
+
+    <section>
+      <h3>1. Web Storage</h3>
+      <input type="text" id="storageInput" placeholder="Írj be valamit">
+      <button onclick="saveStorage()">Mentés</button>
+      <button onclick="loadStorage()">Betöltés</button>
+      <p id="storageResult"></p>
+    </section>
+    <section>
+      <h3>2. Web Worker</h3>
+      <button onclick="startWorker()">Számolás indítása</button>
+      <p id="workerResult"></p>
+    </section>
+
+    <section>
+      <h3>3. Server-Sent Events (SSE)</h3>
+      <button onclick="startSSE()">Kapcsolódás szerverhez</button>
+      <p id="sseOutput">Várakozás szerverre...</p>
+    </section>
+
+    <section>
+      <h3>4. Geolocation</h3>
+      <button onclick="getLocation()">Helyzet lekérése</button>
+      <p id="geoResult"></p>
+    </section>
+
+    <section>
+      <h3>5. Drag and Drop</h3>
+      <div id="dragZone">
+        <div id="dragMe" draggable="true">Húzz engem!</div>
+        <div id="dropHere">Ide dobj</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>6. Canvas</h3>
+      <canvas id="myCanvas" width="300" height="100" style="border:1px solid black;"></canvas>
+    </section>
+
+    <section>
+      <h3>7. SVG</h3>
+      <svg width="200" height="100">
+        <circle cx="50" cy="50" r="40" fill="lightblue" stroke="black" stroke-width="2" />
+        <text x="100" y="55" font-size="16">SVG példa</text>
+      </svg>
+    </section>
+  </div>
+
+  <footer>
+    <p>Takács Péter – OE09T3 | Halasi Zoltán – JJNRKU</p>
+  </footer>
+</body>
+</html>

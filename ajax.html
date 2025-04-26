@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX API feladat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="ajax.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Web-programozás-1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="tabla.html">Táblázat</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a href="chart.html">ChartJS</a></li>
+      <li><a href="ajax.html" class="active">AJAX</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="react.html">React</a></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <p>API: http://gamf.nhely.hu/ajax2/</p>
+  </aside>
+
+  <div id="content">
+    <h2>AJAX – API alapú CRUD</h2>
+
+    <section>
+      <h3>Read – Adatok lekérése</h3>
+      <button onclick="readData()">Adatok betöltése</button>
+      <div id="output"></div>
+      <p id="stats"></p>
+    </section>
+    <section>
+      <h3>Create – Új adat</h3>
+      <input type="text" id="createName" placeholder="Név (max 30)">
+      <input type="number" id="createHeight" placeholder="Magasság (cm)">
+      <input type="number" id="createWeight" placeholder="Súly (kg)">
+      <button onclick="createData()">Hozzáadás</button>
+      <p id="createMsg"></p>
+    </section>
+
+    <section>
+      <h3>Update – Módosítás</h3>
+      <input type="text" id="updateId" placeholder="ID">
+      <button onclick="getDataForId()">Adatok betöltése módosításhoz</button><br>
+      <input type="text" id="updateName" placeholder="Név">
+      <input type="number" id="updateHeight" placeholder="Magasság">
+      <input type="number" id="updateWeight" placeholder="Súly">
+      <button onclick="updateData()">Frissítés</button>
+      <p id="updateMsg"></p>
+    </section>
+
+    <section>
+      <h3>Delete – Törlés</h3>
+      <input type="text" id="deleteId" placeholder="ID">
+      <button onclick="deleteData()">Törlés</button>
+      <p id="deleteMsg"></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>Takács Péter – OE09T3 | Halasi Zoltán – JJNRKU</p>
+  </footer>
+</body>
+</html>

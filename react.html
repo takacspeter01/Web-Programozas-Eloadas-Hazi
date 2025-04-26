@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>React SPA</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Web-programozás-1 Előadás Házi feladat – React SPA</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="tabla.html">Táblázat</a></li>
+      <li><a href="html5.html">HTML5</a></li>
+      <li><a href="chart.html">ChartJS</a></li>
+      <li><a href="ajax.html">AJAX</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="react.html" class="active">React</a></li>
+    </ul>
+  </nav>
+
+  <nav>
+    <ul>
+      <li><button onclick="setApp('counter')">Számláló</button></li>
+      <li><button onclick="setApp('todo')">Teendők</button></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <p>Válassz egy alkalmazást a fenti menüből!</p>
+  </aside>
+
+  <div id="content">
+    <div id="root"></div>
+  </div>
+
+  <footer>
+    <p>Takács Péter – OE09T3 | Halasi Zoltán – JJNRKU</p>
+  </footer>
+
+  <script type="text/babel">
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+
+    function CounterApp() {
+      const [count, setCount] = React.useState(0);
+
+      return (
+        <div style={{padding: "1rem"}}>
+          <h2>Számláló</h2>
+          <p>Érték: {count}</p>
+          <button onClick={() => setCount(count + 1)}>Növel</button>
+          <button onClick={() => setCount(count - 1)}>Csökkent</button>
+          <button onClick={() => setCount(0)}>Visszaállít</button>
+        </div>
+      );
+    }
+    function TodoApp() {
+      const [tasks, setTasks] = React.useState([]);
+      const [newTask, setNewTask] = React.useState("");
+
+      const addTask = () => {
+        if (newTask.trim()) {
+          setTasks([...tasks, newTask.trim()]);
+          setNewTask("");
+        }
+      };
+
+      return (
+        <div style={{padding: "1rem"}}>
+          <h2>Teendő lista</h2>
+          <input
+            type="text"
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
+            placeholder="Új teendő"
+          />
+          <button onClick={addTask}>Hozzáadás</button>
+          <ul>
+            {tasks.map((task, idx) => (
+              <li key={idx}>{task}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+
+    function setApp(appName) {
+      if (appName === "counter") {
+        root.render(<CounterApp />);
+      } else if (appName === "todo") {
+        root.render(<TodoApp />);
+      }
+    }
+
+    // Alapértelmezett indulás: Számláló
+    setApp("counter");
+
+  </script>
+
+</body>
+</html>
